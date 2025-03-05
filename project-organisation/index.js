@@ -193,4 +193,4 @@ app.get('/posts/:id', getPostById);
 app.put('/posts/:id', updatePost);
 app.delete('/posts/:id', deletePost);
 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+app.listen(port, () => console.log(`Server is running on port ${port} http://localhost:${port}`));
