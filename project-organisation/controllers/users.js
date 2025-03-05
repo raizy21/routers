@@ -1,5 +1,5 @@
-import User from "../models/User";
-const getUsers = async (req, res) => {
+import User from "../models/User.js";
+export const getUsers = async (req, res) => {
   try {
     const users = await User.findAll();
     res.json(users);
@@ -8,7 +8,7 @@ const getUsers = async (req, res) => {
   }
 };
 
-const createUser = async (req, res) => {
+export const createUser = async (req, res) => {
   try {
     const {
       body: { firstName, lastName, email },
@@ -26,7 +26,7 @@ const createUser = async (req, res) => {
   }
 };
 
-const getUserById = async (req, res) => {
+export const getUserById = async (req, res) => {
   try {
     const {
       params: { id },
@@ -39,7 +39,7 @@ const getUserById = async (req, res) => {
   }
 };
 
-const updateUser = async (req, res) => {
+export const updateUser = async (req, res) => {
   try {
     const {
       body: { firstName, lastName, email },
@@ -58,7 +58,7 @@ const updateUser = async (req, res) => {
   }
 };
 
-const deleteUser = async (req, res) => {
+export const deleteUser = async (req, res) => {
   try {
     const {
       params: { id },
@@ -71,3 +71,4 @@ const deleteUser = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+

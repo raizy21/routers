@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../db/index";
+import sequelize from "../db/index.js";
 
 const User = sequelize.define("User", {
   firstName: {
@@ -16,3 +16,5 @@ const User = sequelize.define("User", {
     unique: true,
   },
 });
+
+export default User;

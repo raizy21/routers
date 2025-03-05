@@ -1,5 +1,6 @@
-import Post from "../models/Posts";
-const getPosts = async (req, res) => {
+import Post from "../models/Posts.js";
+
+export const getPosts = async (req, res) => {
   try {
     const posts = await Post.findAll({ include: User });
     res.json(posts);
@@ -8,7 +9,7 @@ const getPosts = async (req, res) => {
   }
 };
 
-const createPost = async (req, res) => {
+export const createPost = async (req, res) => {
   try {
     const {
       body: { title, content, userId },
@@ -26,7 +27,7 @@ const createPost = async (req, res) => {
   }
 };
 
-const getPostById = async (req, res) => {
+export const getPostById = async (req, res) => {
   try {
     const {
       params: { id },
@@ -39,7 +40,7 @@ const getPostById = async (req, res) => {
   }
 };
 
-const updatePost = async (req, res) => {
+export const updatePost = async (req, res) => {
   try {
     const {
       body: { title, content, userId },
@@ -60,7 +61,7 @@ const updatePost = async (req, res) => {
   }
 };
 
-const deletePost = async (req, res) => {
+export const deletePost = async (req, res) => {
   try {
     const {
       params: { id },
