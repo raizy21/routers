@@ -1,6 +1,4 @@
 import express from 'express';
-import { DataTypes, Sequelize } from 'sequelize';
-const sequelize = new Sequelize(process.env.PG_URI);
 
 const User = sequelize.define('User', {
   firstName: {
