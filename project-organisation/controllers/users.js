@@ -1,3 +1,4 @@
+import User from "../models/User";
 const getUsers = async (req, res) => {
   try {
     const users = await User.findAll();

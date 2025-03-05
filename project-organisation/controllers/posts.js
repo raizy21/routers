@@ -1,3 +1,4 @@
+import Post from "../models/Posts";
 const getPosts = async (req, res) => {
   try {
     const posts = await Post.findAll({ include: User });
