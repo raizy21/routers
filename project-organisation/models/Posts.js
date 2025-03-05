@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../db/index.js";
+import User from "./User.js";
 
 const Post = sequelize.define("Post", {
   title: {
@@ -12,17 +13,17 @@ const Post = sequelize.define("Post", {
   },
 });
 
-// User.hasMany(Post, {
-//   foreignKey: {
-//     allowNull: false,
-//     name: "userId",
-//   },
-// });
-// Post.belongsTo(User, {
-//   foreignKey: { allowNull: false, name: "userId" },
-//   onDelete: "CASCADE",
-// });
+User.hasMany(Post, {
+  foreignKey: {
+    allowNull: false,
+    name: "userId",
+  },
+});
+Post.belongsTo(User, {
+  foreignKey: { allowNull: false, name: "userId" },
+  onDelete: "CASCADE",
+});
 
-// sequelize.sync();
+sequelize.sync();
 
 export default Post;
